@@ -1,44 +1,44 @@
-<!--
-
-/ // __ / | / /  /   |  /  / | / / / __ \ /  |/  /   |  / //// /
-_ / / / /  |/ / / / / /| |  / //  |/ / __/ / // // /|/ / /| | / ,<  / /
-
-/ / // / /|  / / / / ___ |/ // /|  / // , // /  / / ___ |/ /| |/ /
-
-//_// |/ // //  |/// |/// ||//  ///  |// |/**_/
-
->> ORCHESTRATE CHAOS. CONTAINERIZE LOGIC. <<
--->
-
 <div align="center">
+
+⚡ Container-Make
+
+The Developer Experience Tool for the Container Era
+
+
+
+
+
+容器时代的极致开发体验工具
 
  English  |  中文文档 
 
 </div>
 
-<a id="-english-version"></a>
+<a id="-english"></a>
 
-⚡ Container-Make
-
-The missing link between your Code and the Kernel.
+📖 English
 
 Container-Make (cm) transforms your devcontainer.json into a powerful CLI artifact. It fuses the speed of Makefiles, the isolation of Docker, and the intelligence of VSCode DevContainers into a single, lethal binary.
 
-No more "it works on my machine". No more 500-character docker run commands.
+✨ Why Container-Make?
 
-/// The Philosophy
+🎯 Single Source of Truth
+Your devcontainer.json defines the universe. No more maintaining separate Dockerfiles or Makefiles for local dev.
 
-Single Source of Truth: Your devcontainer.json defines the universe.
+💎 Native Fidelity
+vim, htop, and interactive shells work exactly as they do locally. We handle the complex TTY and signal forwarding for you.
 
-Native Fidelity: vim, htop, and interactive shells work exactly as they do locally.
+🚀 BuildKit Powered
+Leverages Docker BuildKit for aggressive caching. Your environment spins up in seconds, not minutes.
 
-Zero Pollution: Dependencies live in the container, not on your host OS.
+🛡️ Zero Pollution
+Dependencies live in the container, not on your host OS. Keep your machine clean.
 
-/// Quick Start
+🛠️ Workflow
 
-1. Installation
+1. Install
 
-Download the latest binary from Releases or build from source:
+Build from source or download the binary.
 
 git clone [https://github.com/container-make/cm.git](https://github.com/container-make/cm.git)
 cd cm && go build -o cm ./cmd/cm
@@ -46,36 +46,29 @@ cd cm && go build -o cm ./cmd/cm
 
 2. Initialize
 
-Generate shell integration (aliases and shims) to make cm feel like part of your shell.
+Generate shell aliases for a seamless experience.
 
 ./cm init
-# Follow the instructions to add the alias to your .zshrc or .bashrc
+# Follow the on-screen instructions to update your .bashrc/.zshrc
 
 
-3. Execution
+3. Execute
 
-Navigate to any project with a .devcontainer folder and just run.
+Go to any project with a .devcontainer folder and run commands.
 
-Prepare the environment (Build):
-
+# Prepare the environment (Pre-build image)
 cm prepare
 
-
-Run a command:
-
-# Syntax: cm run -- <your-command>
-
+# Run any command inside the container
 cm run -- go build -o app main.go
 cm run -- npm install
-cm run -- python train_model.py
+cm run -- python train.py
 
-
-Enter interactive mode:
-
+# Drop into an interactive shell
 cm run -- /bin/bash
 
 
-/// Configuration
+⚙️ Configuration
 
 We support the standard devcontainer.json specification.
 
@@ -86,33 +79,35 @@ We support the standard devcontainer.json specification.
     "containerEnv": {
         "APP_ENV": "development"
     },
-    "postStartCommand": "echo 'Environment Ready.'"
+    "postStartCommand": "echo 'Ready to code!'"
 }
 
 
-<a id="-chinese-version"></a>
+<a id="-chinese"></a>
 
-⚡ Container-Make (中文版)
-
-代码与内核之间的缺失环节。
+🇨🇳 中文文档
 
 Container-Make (cm) 将您的 devcontainer.json 转化为一个强大的命令行工具。它集成了 Makefile 的极致速度、Docker 的绝对隔离以及 DevContainers 的现代开发体验。
 
-告别 “在我的机器上是好的”。告别 500 个字符长的 docker run 命令。
+✨ 核心价值
 
-/// 核心哲学
+🎯 单一真理来源
+使用 devcontainer.json 定义整个开发宇宙。无需再为本地开发维护额外的 Dockerfile 或 Makefile。
 
-单一真理来源: 使用标准 devcontainer.json 定义开发宇宙。
+💎 原生级保真
+vim、htop 和交互式 Shell 的体验与宿主机完全一致。我们为您处理了复杂的 TTY 和信号转发。
 
-原生级保真度: vim、htop 和交互式 Shell 的体验与宿主机完全一致。
+🚀 BuildKit 驱动
+利用 Docker BuildKit 的激进缓存策略。环境启动仅需秒级，而非分钟级。
 
-零环境污染: 所有依赖均活在容器内，保持宿主机纯净。
+🛡️ 零环境污染
+所有依赖均活在容器内，保持宿主机纯净。告别 "it works on my machine"。
 
-/// 快速开始
+🛠️ 工作流
 
 1. 安装
 
-从 Releases 下载最新二进制文件，或源码编译：
+从源码编译或下载二进制文件。
 
 git clone [https://github.com/container-make/cm.git](https://github.com/container-make/cm.git)
 cd cm && go build -o cm ./cmd/cm
@@ -120,36 +115,29 @@ cd cm && go build -o cm ./cmd/cm
 
 2. 初始化
 
-生成 Shell 集成脚本（别名和垫片），让 cm 与您的终端融为一体。
+生成 Shell 别名，获得无缝体验。
 
 ./cm init
-# 按照屏幕提示将 alias 添加到您的 .zshrc 或 .bashrc 中
+# 按照屏幕提示更新您的 .bashrc 或 .zshrc
 
 
 3. 执行
 
-进入任何包含 .devcontainer 文件夹的项目即可开始使用。
+进入任何包含 .devcontainer 文件夹的项目即可执行。
 
-准备环境 (构建镜像):
-
+# 准备环境 (预构建镜像)
 cm prepare
 
-
-运行命令:
-
-# 语法: cm run -- <您的命令>
-
+# 在容器内运行任意命令
 cm run -- go build -o app main.go
 cm run -- npm install
-cm run -- python train_model.py
+cm run -- python train.py
 
-
-进入交互模式:
-
+# 进入交互式终端
 cm run -- /bin/bash
 
 
-/// 配置指南
+⚙️ 配置指南
 
 我们支持标准的 devcontainer.json 规范。
 
@@ -157,28 +145,26 @@ cm run -- /bin/bash
 {
     // 基础镜像
     "image": "mcp/firecrawl:latest",
-    
+
     // 端口自动转发 (映射到 localhost)
     "forwardPorts": [8080],
-    
+
     // 注入环境变量
     "containerEnv": {
         "APP_ENV": "development"
     },
-    
+
     // 生命周期钩子
-    "postStartCommand": "echo '环境已就绪。'"
+    "postStartCommand": "echo '环境已就绪！'"
 }
 
 
 <div align="center">
-<p>
-<sub>Designed & Engineered by Devin He</sub>
+<sub>Designed for the future of development.</sub>
 
 
 
 
 
-<sub>MIT License</sub>
-</p>
+<sub>MIT License &copy; 2025 Devin HE</sub>
 </div>
