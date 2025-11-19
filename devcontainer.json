@@ -1,0 +1,12 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "containerEnv": {
+        "FIRECRAWL_API_KEY": "YOUR_API_KEY_HERE"
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "postStartCommand": "echo 'PostStart hook executed successfully!'"
+}
